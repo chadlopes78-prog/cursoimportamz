@@ -47,10 +47,7 @@ export function Gallery() {
       >
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PHOTOS.map(({ src, alt }) => (
-            <figure
-              key={alt}
-              className="overflow-hidden rounded-2xl border border-border bg-card"
-            >
+            <figure key={alt} className="overflow-hidden rounded-2xl border border-border bg-card">
               <img
                 src={src}
                 alt={alt}

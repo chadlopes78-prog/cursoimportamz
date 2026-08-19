@@ -8,7 +8,6 @@ import { About } from "@/components/landing/About";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Offer } from "@/components/landing/Offer";
 
-
 const TITLE = "Importação de Cosméticos e Perucas: Curso em Moz";
 const DESCRIPTION =
   "Aprende a importar cosméticos, perfumes e perucas da China e receber em Moçambique: fornecedores testados, pagamentos, logística e grupo VIP. Por apenas 247 MT.";

@@ -96,7 +96,9 @@
   --sidebar-accent-foreground: oklch(0.975 0.005 350);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.57 0.235 25);
-  --gradient-hero: radial-gradient(120% 80% at 50% -10%, var(--primary) 0%, transparent 60%), linear-gradient(180deg, oklch(0.07 0.015 25) 0%, oklch(0.03 0.008 25) 100%);
+  --gradient-hero:
+    radial-gradient(120% 80% at 50% -10%, var(--primary) 0%, transparent 60%),
+    linear-gradient(180deg, oklch(0.07 0.015 25) 0%, oklch(0.03 0.008 25) 100%);
   --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
   --shadow-glow: 0 20px 60px -20px oklch(0.57 0.235 25 / 0.55);
 }
@@ -123,18 +125,26 @@
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes arrow-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
 }
 
-
 /* Hide Lovable Badge */
-.lovable-badge, 
+.lovable-badge,
 #lovable-badge,
 [class*="lovable-badge"] {
   display: none !important;

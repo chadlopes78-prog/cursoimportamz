@@ -124,9 +124,7 @@ export function BothIncluded() {
         </h2>
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
           <article className="rounded-3xl border border-border bg-card p-6">
-            <h3 className="text-lg font-bold text-card-foreground">
-              💇🏾‍♀️ Importação de Perucas
-            </h3>
+            <h3 className="text-lg font-bold text-card-foreground">💇🏾‍♀️ Importação de Perucas</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Perucas, cabelos, fornecedores, compras e envio.
             </p>

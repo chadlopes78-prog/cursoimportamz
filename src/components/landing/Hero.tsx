@@ -47,7 +47,8 @@ export function Hero() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Um método prático e direto que utilizo para encontrar fornecedores confiáveis de
-            cosméticos, perfumes e perucas na China, comprar a preços acessíveis e receber em Moçambique.
+            cosméticos, perfumes e perucas na China, comprar a preços acessíveis e receber em
+            Moçambique.
           </p>
           <p className="mx-auto mt-5 max-w-xl text-base font-semibold text-foreground sm:text-lg">
             Veja o vídeo abaixo e descubra tudo o que vais encontrar hoje dentro do Curso de
