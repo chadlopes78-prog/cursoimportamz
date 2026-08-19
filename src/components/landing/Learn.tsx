@@ -14,7 +14,6 @@ const LESSONS = [
   "O passo a passo da minha jornada de importação",
 ] as const;
 
-
 export function Learn() {
   return (
     <>
