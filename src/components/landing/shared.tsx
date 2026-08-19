@@ -2,7 +2,7 @@ import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /** Link de checkout único da oferta (Ratixpay). */
-export const CHECKOUT_URL = "https://ratixpay.co.mz/checkout.html?produto=SML935SE3";
+export const CHECKOUT_URL = "https://checkout.escalepay.com/9615683";
 
 export interface CtaProps extends ComponentProps<"a"> {
   children: ReactNode;
