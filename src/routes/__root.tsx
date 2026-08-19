@@ -78,15 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Importação de Cosméticos e Perucas: Curso em Moz" },
-      { name: "description", content: "Aprende a importar cosméticos, perfumes e perucas da China e receber em Moçambique: fornecedores testados, pagamentos, logística e grupo VIP. Por apenas 350 MT." },
-      { name: "author", content: "Lovable" },
+      { name: "description", content: "Aprende a importar cosméticos, perfumes e perucas da China e receber em Moçambique: fornecedores testados, pagamentos, logística e grupo VIP. Por apenas 247 MT." },
       { property: "og:title", content: "Importação de Cosméticos e Perucas: Curso em Moz" },
-      { property: "og:description", content: "Aprende a importar cosméticos, perfumes e perucas da China e receber em Moçambique: fornecedores testados, pagamentos, logística e grupo VIP. Por apenas 350 MT." },
+      { property: "og:description", content: "Aprende a importar cosméticos, perfumes e perucas da China e receber em Moçambique: fornecedores testados, pagamentos, logística e grupo VIP. Por apenas 247 MT." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Importação de Cosméticos e Perucas: Curso em Moz" },
-      { name: "twitter:description", content: "Aprende a importar cosméticos, perfumes e perucas da China e receber em Moçambique: fornecedores testados, pagamentos, logística e grupo VIP. Por apenas 350 MT." },
+      { name: "twitter:description", content: "Aprende a importar cosméticos, perfumes e perucas da China e receber em Moçambique: fornecedores testados, pagamentos, logística e grupo VIP. Por apenas 247 MT." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e7cc9842e166b86e7ff4cb43e30d7847/id-preview-1f4d2c09--e7cb979f-6cef-40b2-a55e-1598c326a2ed.lovable.app-1787036508042.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e7cc9842e166b86e7ff4cb43e30d7847/id-preview-1f4d2c09--e7cb979f-6cef-40b2-a55e-1598c326a2ed.lovable.app-1787036508042.png" },
     ],
@@ -96,6 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "canonical", href: "https://id-preview--9002e5cc-ca2e-49cd-bbf1-ce4eafa2a5ca.lovable.app/" },
     ],
   }),
   shellComponent: RootShell,
@@ -106,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt">
       <head>
         <HeadContent />
       </head>
