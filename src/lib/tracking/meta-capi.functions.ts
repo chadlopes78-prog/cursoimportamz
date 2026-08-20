@@ -26,7 +26,7 @@ const EventSchema = z.object({
  */
 export const trackMetaEvent = createServerFn({ method: "POST" })
   .inputValidator((data) => z.array(EventSchema).parse(data))
-  .handler(async ({ data: events, request }) => {
+  .handler(async ({ data: events }) => {
     const pixelId = process.env["META_PIXEL_ID"] || "1581672686695866";
     const accessToken = process.env["META_ACCESS_TOKEN"];
 

@@ -7,6 +7,8 @@ import { Gallery } from "@/components/landing/Gallery";
 import { About } from "@/components/landing/About";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Offer } from "@/components/landing/Offer";
+import { useEffect } from "react";
+import { trackPageView, trackViewContent } from "@/lib/tracking/meta-pixel";
 
 const TITLE = "Importação de Cosméticos e Perucas: Curso em Moz";
 const DESCRIPTION =
@@ -27,23 +29,10 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [hasViewedContent, setHasViewedContent] = import("react").then((m) => m.useState(false));
-  const { useEffect } = import("react").then((m) => m);
-
-  // Note: Since I can't use top-level await in line_replace easily with types, 
-  // I'll use standard imports for Index.
-  return <IndexContent />;
-}
-
-import { useEffect } from "react";
-import { trackPageView, trackViewContent } from "@/lib/tracking/meta-pixel";
-
-function IndexContent() {
   useEffect(() => {
     trackPageView();
     
     // ViewContent triggered after a short delay or when certain sections are visible.
-    // For now, we trigger it on mount as per requirement "visualizar/carregar correttamente a oferta".
     const timer = setTimeout(() => {
       trackViewContent();
     }, 1500);
