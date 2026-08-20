@@ -1,4 +1,3 @@
-REDUZ informacoes na pagina tornando assim ela uma pagina de alta conversao
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/landing/Hero";
 import { Vsl } from "@/components/landing/Vsl";
