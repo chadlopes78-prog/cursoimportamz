@@ -88,6 +88,7 @@ export function Testimonials() {
                 width={800}
                 height={1000}
                 loading="lazy"
+                decoding="async"
                 className="aspect-[3/4] w-full object-cover object-top"
               />
               <div className="flex flex-1 flex-col p-6">
@@ -99,6 +100,7 @@ export function Testimonials() {
                     width={72}
                     height={72}
                     loading="lazy"
+                    decoding="async"
                     className="size-10 rounded-full object-cover"
                   />
                   <span className="text-sm font-semibold text-foreground">{name}</span>

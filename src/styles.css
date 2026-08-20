@@ -115,7 +115,10 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    content-visibility: auto;
+    text-rendering: optimizeSpeed;
   }
+
 }
 
 @theme inline {
