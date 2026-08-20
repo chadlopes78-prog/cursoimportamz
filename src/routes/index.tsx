@@ -33,6 +33,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   // REDUZ informacoes na pagina tornando assim ela uma pagina de alta conversao
+  // A pagina tem muita informacao reduz deixando ela uma pagina de alta conversao
+
 
   const pageViewTracked = useRef(false);
   const viewContentTracked = useRef(false);
