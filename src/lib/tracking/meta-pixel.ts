@@ -28,19 +28,12 @@ function getCookie(name: string) {
 }
 
 /**
- * Envia evento PageView.
+ * Envia evento PageView para CAPI (Browser já disparado no head).
  */
-export async function trackPageView() {
-  const eventId = generateEventId();
+export async function trackCapiPageView(eventId: string) {
   const eventTime = Math.floor(Date.now() / 1000);
   const url = window.location.href;
 
-  // Browser
-  if (window.fbq) {
-    window.fbq("track", "PageView", {}, { eventID: eventId });
-  }
-
-  // Server (CAPI)
   await trackMetaEvent({
     data: [
       {
