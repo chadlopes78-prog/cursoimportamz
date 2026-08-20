@@ -54,6 +54,7 @@ export function Gallery() {
                 width={800}
                 height={1000}
                 loading="lazy"
+                decoding="async"
                 className="aspect-[3/4] h-full w-full object-cover transition-transform duration-500 hover:scale-105"
               />
             </figure>
@@ -81,6 +82,7 @@ export function Gallery() {
                 width={950}
                 height={1180}
                 loading="lazy"
+                decoding="async"
                 className="aspect-[4/5] h-full w-full object-cover transition-transform duration-500 hover:scale-105"
               />
               <figcaption className="px-4 py-3 text-xs text-muted-foreground">{alt}</figcaption>

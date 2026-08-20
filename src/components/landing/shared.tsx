@@ -46,7 +46,7 @@ export interface SectionProps extends ComponentProps<"section"> {
 export function Section({ eyebrow, title, subtitle, className, children, ...props }: SectionProps) {
 
   return (
-    <section className={cn("px-4 py-16 sm:py-20", className)} {...props}>
+    <section className={cn("px-4 py-16 sm:py-20", className)} {...props} style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }}>
       <div className="mx-auto max-w-5xl">
         {(eyebrow || title || subtitle) && (
           <header className="mx-auto mb-10 max-w-2xl text-center">

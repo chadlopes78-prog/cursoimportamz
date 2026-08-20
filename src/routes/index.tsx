@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/landing/Hero";
 import { Vsl } from "@/components/landing/Vsl";
-import { Learn } from "@/components/landing/Learn";
-import { BothIncluded, Iphones } from "@/components/landing/Iphones";
-import { Gallery } from "@/components/landing/Gallery";
-import { About } from "@/components/landing/About";
-import { Testimonials } from "@/components/landing/Testimonials";
-import { Offer } from "@/components/landing/Offer";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense, lazy } from "react";
 import { trackViewContent, trackCapiPageView } from "@/lib/tracking/meta-pixel";
+
+// Componentes abaixo da dobra carregados sob demanda
+const Learn = lazy(() => import("@/components/landing/Learn").then(m => ({ default: m.Learn })));
+const Iphones = lazy(() => import("@/components/landing/Iphones").then(m => ({ default: m.Iphones })));
+const BothIncluded = lazy(() => import("@/components/landing/Iphones").then(m => ({ default: m.BothIncluded })));
+const Gallery = lazy(() => import("@/components/landing/Gallery").then(m => ({ default: m.Gallery })));
+const About = lazy(() => import("@/components/landing/About").then(m => ({ default: m.About })));
+const Testimonials = lazy(() => import("@/components/landing/Testimonials").then(m => ({ default: m.Testimonials })));
+const Offer = lazy(() => import("@/components/landing/Offer").then(m => ({ default: m.Offer })));
 
 const TITLE = "Importação de Cosméticos e Perucas: Curso em Moz";
 const DESCRIPTION =
@@ -35,7 +38,6 @@ function Index() {
   useEffect(() => {
     if (pageViewTracked.current) return;
     
-    // Sincronizar o PageView do Browser com CAPI usando o mesmo event_id
     const pageViewId = (window as any)._fb_pageview_id;
     if (pageViewId) {
       trackCapiPageView(pageViewId);
@@ -67,16 +69,21 @@ function Index() {
 
   return (
     <main className="min-h-screen bg-background">
+      {/* Conteúdo Crítico (Acima da dobra) */}
       <Hero />
       <Vsl />
-      <Learn />
-      <Iphones />
-      <BothIncluded />
-      <Gallery />
+      
+      {/* Conteúdo Secundário (Lazy) */}
+      <Suspense fallback={<div className="h-96" />}>
+        <Learn />
+        <Iphones />
+        <BothIncluded />
+        <Gallery />
+        <About />
+        <Testimonials />
+        <Offer />
+      </Suspense>
 
-      <About />
-      <Testimonials />
-      <Offer />
       <footer className="border-t border-border px-4 py-8 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Método de Importação de Cosméticos e Perucas · Moçambique
       </footer>

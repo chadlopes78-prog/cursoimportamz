@@ -41,6 +41,7 @@ export function Iphones() {
               width={480}
               height={640}
               loading="lazy"
+              decoding="async"
               className="aspect-[4/3] w-full object-cover"
             />
           </figure>
@@ -51,6 +52,7 @@ export function Iphones() {
               width={1086}
               height={652}
               loading="lazy"
+              decoding="async"
               className="aspect-[4/3] w-full object-cover"
             />
           </figure>
