@@ -7,6 +7,8 @@ import { Gallery } from "@/components/landing/Gallery";
 import { About } from "@/components/landing/About";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Offer } from "@/components/landing/Offer";
+import { useEffect } from "react";
+import { trackPageView, trackViewContent } from "@/lib/tracking/meta-pixel";
 
 const TITLE = "Importação de Cosméticos e Perucas: Curso em Moz";
 const DESCRIPTION =
@@ -27,6 +29,17 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useEffect(() => {
+    trackPageView();
+    
+    // ViewContent triggered after a short delay or when certain sections are visible.
+    const timer = setTimeout(() => {
+      trackViewContent();
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="min-h-screen bg-background">
       <Hero />

@@ -1,4 +1,5 @@
 import { ChevronDown, Flame, ShieldCheck, Truck, Users } from "lucide-react";
+import { Cta } from "./shared";
 
 const MARQUEE_ITEMS = [
   "Oferta por tempo limitado",
@@ -63,12 +64,7 @@ export function Hero() {
           </a>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="#vsl"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-glow px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              Ver o que vou aprender a importar
-            </a>
+            <Cta>Ver o que vou aprender a importar</Cta>
           </div>
           <p className="mt-5 text-sm font-semibold text-primary-glow">
             🔥 Apenas 7 vagas restantes
