@@ -80,8 +80,8 @@ function Index() {
       {/* Conteúdo Secundário (Lazy) */}
       <Suspense fallback={<div className="h-96" />}>
         <Learn />
-        <Iphones />
         <BothIncluded />
+
         <Gallery />
         <About />
         <Testimonials />

@@ -131,12 +131,13 @@ export function BothIncluded() {
               Perucas, cabelos, fornecedores, compras e envio.
             </p>
           </article>
-          <article className="rounded-3xl border border-primary/40 bg-card p-6 shadow-[var(--shadow-glow)]">
-            <h3 className="text-lg font-bold text-card-foreground">📱 Importação de iPhones</h3>
+          <article className="rounded-3xl border border-border bg-card p-6">
+            <h3 className="text-lg font-bold text-card-foreground">📦 Importação em Geral</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Fornecedores, preços, compras, envio e revenda.
+              Aprende a encontrar qualquer fornecedor e importar com segurança.
             </p>
           </article>
+
           <article className="rounded-3xl border border-border bg-card p-6">
             <h3 className="text-lg font-bold text-card-foreground">✨ Cosméticos e Perfumes</h3>
             <p className="mt-2 text-sm text-muted-foreground">
