@@ -7,8 +7,8 @@ import { Gallery } from "@/components/landing/Gallery";
 import { About } from "@/components/landing/About";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Offer } from "@/components/landing/Offer";
-import { useEffect } from "react";
-import { trackPageView, trackViewContent } from "@/lib/tracking/meta-pixel";
+import { useEffect, useRef } from "react";
+import { trackViewContent, trackCapiPageView } from "@/lib/tracking/meta-pixel";
 
 const TITLE = "Importação de Cosméticos e Perucas: Curso em Moz";
 const DESCRIPTION =
@@ -29,15 +29,40 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  useEffect(() => {
-    trackPageView();
-    
-    // ViewContent triggered after a short delay or when certain sections are visible.
-    const timer = setTimeout(() => {
-      trackViewContent();
-    }, 1500);
+  const pageViewTracked = useRef(false);
+  const viewContentTracked = useRef(false);
 
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    if (pageViewTracked.current) return;
+    
+    // Sincronizar o PageView do Browser com CAPI usando o mesmo event_id
+    const pageViewId = (window as any)._fb_pageview_id;
+    if (pageViewId) {
+      trackCapiPageView(pageViewId);
+      pageViewTracked.current = true;
+    }
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !viewContentTracked.current) {
+            trackViewContent();
+            viewContentTracked.current = true;
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const learnSection = document.getElementById("learn-section");
+    if (learnSection) {
+      observer.observe(learnSection);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (

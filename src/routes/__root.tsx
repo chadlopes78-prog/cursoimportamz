@@ -144,6 +144,10 @@ function RootShell({ children }: { children: ReactNode }) {
               s.parentNode.insertBefore(t,s)}(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '1581672686695866');
+              window._fb_pageview_id = 'evt_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+              fbq('track', 'PageView', {}, { eventID: window._fb_pageview_id });
+
+
             `,
           }}
         />
