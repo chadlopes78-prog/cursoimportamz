@@ -44,6 +44,7 @@ export interface SectionProps extends ComponentProps<"section"> {
 
 /** Wrapper de secção com cabeçalho opcional. */
 export function Section({ eyebrow, title, subtitle, className, children, ...props }: SectionProps) {
+
   return (
     <section className={cn("px-4 py-16 sm:py-20", className)} {...props}>
       <div className="mx-auto max-w-5xl">
