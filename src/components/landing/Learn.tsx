@@ -18,6 +18,7 @@ export function Learn() {
   return (
     <>
       <Section
+        id="learn-section"
         title="O que vais aprender"
         subtitle="Um passo a passo completo, sem rodeios, do zero até receberes a tua primeira encomenda."
       >
